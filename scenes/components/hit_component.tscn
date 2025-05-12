@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://086oo6plyty"]
+
+[ext_resource type="Script" path="res://scenes/components/HitComponent.cs" id="1_cwx4v"]
+
+[node name="HitComponent" type="Area2D"]
+script = ExtResource("1_cwx4v")

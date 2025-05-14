@@ -382,5 +382,6 @@ tile_map_data = PackedByteArray("AAALAAoAAwAAAAAAAwAQAA0AAwAAAAAAAwANAAkAAwAAAAA
 tile_set = ExtResource("1_ekufy")
 
 [node name="Player" parent="." instance=ExtResource("3_3mcih")]
+CurrentTool = 1
 
 [node name="Camera2D" type="Camera2D" parent="Player"]

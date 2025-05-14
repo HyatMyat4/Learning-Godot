@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://clagoxchswbr3"]
-
-[ext_resource type="Script" path="res://scenes/components/DimageComponent.cs" id="1_es0rr"]
-
-[node name="DamageComponent" type="Node2D"]
-script = ExtResource("1_es0rr")

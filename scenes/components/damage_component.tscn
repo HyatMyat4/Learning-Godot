@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://il22vnrbxdeb"]
+[gd_scene load_steps=2 format=3 uid="uid://ct0osl7q1ox50"]
 
-[ext_resource type="Script" path="res://scenes/components/DimageComponent.cs" id="1_es0rr"]
+[ext_resource type="Script" path="res://scenes/components/DamageComponent.cs" id="1_m7d2q"]
 
 [node name="DamageComponent" type="Node2D"]
-script = ExtResource("1_es0rr")
+script = ExtResource("1_m7d2q")

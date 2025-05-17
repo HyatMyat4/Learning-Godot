@@ -65,7 +65,7 @@ public partial class NodeStateMachine : Node
 		{
 			_currentNodeState.OnPhysicsProcess((float)delta);
 			_currentNodeState.OnNextTransitions();
-			//GD.Print($"{_parentNodeName} Current State: {_currentNodeStateName}");
+			GD.Print($"{_parentNodeName} Current State: {_currentNodeStateName}");
 		}
 	}
 

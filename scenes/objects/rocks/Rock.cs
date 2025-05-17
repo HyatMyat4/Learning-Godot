@@ -22,6 +22,17 @@ public partial class Rock : Sprite2D
 	{
 		GD.Print('#', hitDamage, '#');
 		_damageComponent.ApplyDamage(hitDamage);
+
+		if (Material is ShaderMaterial shaderMaterial)
+		{
+
+			await ToSignal(GetTree().CreateTimer(0.50f), SceneTreeTimer.SignalName.Timeout);
+			shaderMaterial.SetShaderParameter("shake_intensity", 0.3f);
+
+			await ToSignal(GetTree().CreateTimer(0.50f), SceneTreeTimer.SignalName.Timeout);
+
+			shaderMaterial.SetShaderParameter("shake_intensity", 0.0f);
+		}
 	}
 
 

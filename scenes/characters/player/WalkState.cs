@@ -19,7 +19,7 @@ public partial class WalkState : NodeState
 		// Early exit if required components are missing
 		if (Player == null || AnimatedSprite2D == null)
 		{
-			GD.PrintErr("WalkState: Player or AnimatedSprite2D is not assigned!");
+			//GD.PrintErr("WalkState: Player or AnimatedSprite2D is not assigned!");
 			return;
 		}
 

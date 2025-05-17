@@ -65,13 +65,13 @@ public partial class NodeStateMachine : Node
 		{
 			_currentNodeState.OnPhysicsProcess((float)delta);
 			_currentNodeState.OnNextTransitions();
-			GD.Print($"{_parentNodeName} Current State: {_currentNodeStateName}");
+			//GD.Print($"{_parentNodeName} Current State: {_currentNodeStateName}");
 		}
 	}
 
 	private void OnStateTransition(string newStateName)
 	{
-		GD.Print($"[Transition] Requested transition to: {newStateName}");
+		//GD.Print($"[Transition] Requested transition to: {newStateName}");
 		TransitionTo(newStateName);
 	}
 
@@ -82,7 +82,7 @@ public partial class NodeStateMachine : Node
 
 		if (!_nodeStates.TryGetValue(nodeStateName.ToLower(), out var newNodeState))
 		{
-			GD.PrintErr($"[Transition] State not found: {nodeStateName}");
+			//GD.PrintErr($"[Transition] State not found: {nodeStateName}");
 			return;
 		}
 
@@ -92,6 +92,6 @@ public partial class NodeStateMachine : Node
 		_currentNodeState = newNodeState;
 		_currentNodeStateName = _currentNodeState.Name.ToString().ToLower();
 
-		GD.Print($"[Transition] Transitioned to: {_currentNodeStateName}");
+		//GD.Print($"[Transition] Transitioned to: {_currentNodeStateName}");
 	}
 }

@@ -4,7 +4,10 @@ using System;
 public partial class DamageComponent : Node2D
 {
 
+	[Export]
 	public int MaxDamage = 3;
+
+	[Export]
 	public int CurrentDamage = 0;
 
 	[Signal]

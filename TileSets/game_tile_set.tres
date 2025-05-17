@@ -1,9 +1,10 @@
-[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://vnxp6lci6bxq"]
+[gd_resource type="TileSet" load_steps=8 format=3 uid="uid://vnxp6lci6bxq"]
 
 [ext_resource type="PackedScene" uid="uid://bggp38j572q3j" path="res://scenes/houses/large_house.tscn" id="1_5dpt3"]
 [ext_resource type="Texture2D" uid="uid://p2hw1f3dyti6" path="res://assets/game/Tilesets/Water.png" id="1_adymn"]
 [ext_resource type="PackedScene" uid="uid://dtkgc7cynqff1" path="res://scenes/houses/small_house.tscn" id="3_nlstu"]
 [ext_resource type="PackedScene" uid="uid://d3jti524moy8u" path="res://scenes/objects/trees/small_tree.tscn" id="4_47itd"]
+[ext_resource type="PackedScene" uid="uid://6fp3jkg4i1jo" path="res://scenes/objects/trees/large_tree.tscn" id="5_ir7nn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hi4rd"]
 texture = ExtResource("1_adymn")
@@ -17,7 +18,8 @@ texture = ExtResource("1_adymn")
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_ltfvw"]
 scenes/1/scene = ExtResource("1_5dpt3")
 scenes/2/scene = ExtResource("3_nlstu")
-scenes/3/scene = ExtResource("4_47itd")
+scenes/9/scene = ExtResource("5_ir7nn")
+scenes/10/scene = ExtResource("4_47itd")
 
 [resource]
 physics_layer_0/collision_layer = 1

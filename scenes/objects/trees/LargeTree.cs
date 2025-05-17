@@ -2,7 +2,7 @@ using Godot;
 using System;
 using System.Threading.Tasks;
 
-public partial class SmallTree : Sprite2D
+public partial class LargeTree : Sprite2D
 {
 	private HurtComponent _hurtComponent;
 	private DamageComponent _damageComponent;
@@ -16,10 +16,12 @@ public partial class SmallTree : Sprite2D
 
 		_hurtComponent.OnHurt += OnHurt;
 		_damageComponent.MaxDamagedReached += OnMaxDamageReached;
+
 	}
 
 	private async void OnHurt(int hitDamage)
 	{
+
 		_damageComponent.ApplyDamage(hitDamage);
 
 		if (Material is ShaderMaterial shaderMaterial)
@@ -34,7 +36,6 @@ public partial class SmallTree : Sprite2D
 		}
 	}
 
-
 	private void OnMaxDamageReached()
 	{
 		CallDeferred(nameof(AddLogScene));
@@ -47,7 +48,7 @@ public partial class SmallTree : Sprite2D
 		if (_logScene.Instantiate() is Node2D logInstance)
 		{
 			logInstance.GlobalPosition = GlobalPosition;
-			GetParent()?.AddChild(logInstance);
+			GetParent().AddChild(logInstance);
 		}
 	}
 }

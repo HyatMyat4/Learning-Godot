@@ -13,8 +13,10 @@ public partial class HurtComponent : Area2D
 	{
 		if (area is HitComponent hitComponent)
 		{
+			GD.Print('#', Tool, hitComponent.CurrentTool, '#');
 			if (Tool == hitComponent.CurrentTool)
 			{
+
 				EmitSignal(SignalName.OnHurt, hitComponent.HitDamage); // Emit signal correctly
 			}
 		}

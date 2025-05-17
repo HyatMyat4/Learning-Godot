@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class CollectableComponent : Area2D
+public partial class CollectAbleComponent : Area2D
 {
 	[Export]
 	public string CollectableName { get; set; }

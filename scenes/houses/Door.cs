@@ -23,13 +23,13 @@ public partial class Door : StaticBody2D
 	{
 		_animatedSprite2D.Play("open_door");
 		CollisionLayer = 2;
-		GD.Print("activated");
+
 	}
 
 	private void OnInteractableDeactivated()
 	{
 		_animatedSprite2D.Play("close_door");
 		CollisionLayer = 1;
-		GD.Print("deactivated");
+
 	}
 }

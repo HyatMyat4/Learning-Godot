@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://hfx3b5y77ds0"]
+[gd_scene load_steps=14 format=3 uid="uid://hfx3b5y77ds0"]
 
 [ext_resource type="Texture2D" uid="uid://b0d53dulwqma1" path="res://assets/game/Characters/Free Chicken Sprites/Free Chicken Sprites.png" id="1_15bh7"]
+[ext_resource type="Script" path="res://scenes/characters/chicken/Chicken.cs" id="1_k3n7r"]
 [ext_resource type="Script" path="res://scripts/state_machine/NodeStateMachine.cs" id="2_brles"]
-[ext_resource type="Script" path="res://scenes/characters/chicken/NpcIdleState.cs" id="3_6kdj8"]
-[ext_resource type="Script" path="res://scenes/characters/chicken/NpcWalkState.cs" id="4_yta5s"]
+[ext_resource type="Script" path="res://scenes/characters/npcState/NpcIdleState.cs" id="3_6kdj8"]
+[ext_resource type="Script" path="res://scenes/characters/npcState/NpcWalkState.cs" id="4_yta5s"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0k8vk"]
 atlas = ExtResource("1_15bh7")
@@ -64,6 +65,7 @@ animations = [{
 radius = 5.0
 
 [node name="Chicken" type="CharacterBody2D"]
+script = ExtResource("1_k3n7r")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, -6)
@@ -77,6 +79,10 @@ frame_progress = 0.256034
 position = Vector2(0, -5)
 shape = SubResource("CircleShape2D_dxuyr")
 
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+avoidance_enabled = true
+radius = 5.0
+
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("InitialNodeState")]
 script = ExtResource("2_brles")
 InitialNodeState = NodePath("NpcIdleState")
@@ -86,7 +92,8 @@ script = ExtResource("3_6kdj8")
 CharacterBody2D = NodePath("../..")
 AnimatedSprite2D = NodePath("../../AnimatedSprite2D")
 
-[node name="NpcWalkState" type="Node" parent="StateMachine" node_paths=PackedStringArray("CharacterBody2D", "AnimatedSprite2D")]
+[node name="NpcWalkState" type="Node" parent="StateMachine" node_paths=PackedStringArray("Character", "AnimatedSprite", "NavigationAgent")]
 script = ExtResource("4_yta5s")
-CharacterBody2D = NodePath("../..")
-AnimatedSprite2D = NodePath("../../AnimatedSprite2D")
+Character = NodePath("../..")
+AnimatedSprite = NodePath("../../AnimatedSprite2D")
+NavigationAgent = NodePath("../../NavigationAgent2D")

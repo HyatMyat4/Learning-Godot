@@ -45,7 +45,7 @@ public partial class NpcIdleState : NodeState
 	{
 		if (idleStateTimeout)
 		{
-			EmitSignal(SignalName.Transition, "walk");
+			EmitSignal(SignalName.Transition, "NpcWalkState");
 		}
 	}
 
